@@ -1,17 +1,12 @@
 call plug#begin("~/.vim/plugged")
  " Plugin Section
- Plug 'dracula/vim'
+ Plug 'jeffkreeftmeijer/vim-dim'
 call plug#end()
-
-" color scheme
- if (has("termguicolors"))
- set termguicolors
- endif
 
  syntax enable
 
- " colorscheme evening
-colorscheme dracula
+" colorscheme choice
+colorscheme dim
 
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching
