@@ -1,0 +1,16 @@
+---
+
+- name: update ssh config for textiq hosts
+  blockinfile:
+    path: ~/.ssh/config
+    create: yes
+    mode: 0600
+    marker: "# {mark} textiq hosts"
+    block: |-
+      {% for sshconfig in sshconfigs %}
+      Host {{ sshconfig.name }}
+         ForwardAgent yes
+         AddKeysToAgent yes
+         IdentityFile {{ sshconfig.IdentityFile }}
+         ServerAliveInterval 20
+      {% endfor %}

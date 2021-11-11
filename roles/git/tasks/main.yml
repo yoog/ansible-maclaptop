@@ -25,12 +25,15 @@
     path: ~/.ssh/config
     create: yes
     mode: 0600
+    marker: "# {mark} ssh github"
     block: |-
       {% for sshgitconfig in sshgitconfigs %}
       {{ sshgitconfig.comment }}
-      Host: {{ sshgitconfig.name }}
-        Hostname {{ sshgitconfig.fqdn }}
-        User git
-        IdentityFile {{ sshgitconfig.IdentityFile }}
+      Host {{ sshgitconfig.name }}
+         HostName {{ sshgitconfig.fqdn }}
+         User git
+         AddKeysToAgent yes
+         UseKeychain yes
+         IdentityFile {{ sshgitconfig.IdentityFile }}
 
       {% endfor %}
