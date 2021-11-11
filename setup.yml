@@ -1,0 +1,7 @@
+---
+- hosts: all
+  vars:
+    current_user: "{{ lookup('env', 'USER') }}"
+  roles:
+    - { role: git, tags: ['git'] }
+    - { role: ssh, tags: ['ssh'] }

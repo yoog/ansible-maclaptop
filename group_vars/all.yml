@@ -1,0 +1,21 @@
+sshconfigs:
+  - name: textiq.net
+    IdentityFile: "~/.ssh/id_rsa"
+
+gitconfigs:
+ - path: ~/dev
+   name: Gene Yoo
+   email: gene.yoo@textiq.com
+ - path: ~/devpersonal
+   name: yoog
+   email: gene.yoo22@gmail.com
+
+sshgitconfigs:
+  - name: github.com
+    fqdn: github.com
+    IdentityFile: "~/.ssh/id_rsa"
+    comment: '# github textiq'
+  - name: github.com-yoog
+    fqdn: github.com
+    IdentityFile: "~/.ssh/id_rsa_yoog"
+    comment: '# github personal'
