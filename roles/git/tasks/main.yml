@@ -1,0 +1,36 @@
+---
+
+- name: update git to latest
+  homebrew:
+    name: git
+    state: latest
+    update_homebrew: yes
+
+- name: add custom git configs
+  template:
+    src: gitconfig.j2
+    dest: "{{ gitconfig.path }}/.gitconfig"
+  loop: "{{ gitconfigs }}"
+  loop_control:
+    loop_var: gitconfig
+
+- name: make sure .ssh dir exists
+  file:
+    path: "{{ lookup('env', 'HOME') }}/.ssh"
+    mode: 0700
+    state: directory
+
+- name: update ssh config
+  blockinfile:
+    path: ~/.ssh/config
+    create: yes
+    mode: 0600
+    block: |-
+      {% for sshgitconfig in sshgitconfigs %}
+      {{ sshgitconfig.comment }}
+      Host: {{ sshgitconfig.name }}
+        Hostname {{ sshgitconfig.fqdn }}
+        User git
+        IdentityFile {{ sshgitconfig.IdentityFile }}
+
+      {% endfor %}
