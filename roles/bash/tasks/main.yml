@@ -1,0 +1,10 @@
+---
+
+- name: set bash as default terminal
+  command:
+    cmd: chsh -s /bin/bash
+
+- name: add bash_profile
+  template:
+    src: bash_profile.j2
+    dest: "{{ home_dir }}/.bash_profile"

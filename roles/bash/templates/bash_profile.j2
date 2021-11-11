@@ -1,0 +1,27 @@
+# colors
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# path stuff
+export PATH="$PATH:/usr/local/bin/"
+export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
+
+# default prompt
+#export PS1="\h:\W \u\$"
+
+# prompt
+export PS1="\u@\h \e[1;36m\w\e[m> "
+
+# aliases
+alias ll="ls -lh"
+
+alias awsdev="export AWS_PROFILE='dev'"
+alias awsprod="export AWS_PROFILE='prod'"
+alias tiqdeploy="ssh textiq@tiq-deploy-0-dev.textiq.net"
+alias vim="nvim"
+alias dev="cd ~/dev"
+alias devpersonal="cd ~/devpersonal"
+
+# taken from https://gist.github.com/natelandau/10654137
+alias path='echo -e ${PATH//:/\\n}'
+
