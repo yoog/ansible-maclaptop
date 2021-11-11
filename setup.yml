@@ -7,3 +7,4 @@
     - { role: git, tags: ['git'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: nvim, tags: ['nvim'] }
+    - { role: bash, tags: ['bash'] }
