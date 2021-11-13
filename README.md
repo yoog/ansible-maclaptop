@@ -2,6 +2,14 @@
 
 Ansible roles for setting my mac laptop
 
+## install ansible
+
+NOTE: ansible 2.9 is used in prod hence hardcoding of the specific version!
+
+```bash
+pip3 install ansible==2.9.27
+```
+
 ## Roles
 
 ### git
