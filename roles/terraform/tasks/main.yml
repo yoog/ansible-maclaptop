@@ -1,0 +1,26 @@
+---
+
+# brew isn't used here cause we use an old version of terraform 
+# so it's the ol' wget manual install
+
+- name: create tmp downlaod dir
+  tempfile:
+    state: directory
+    suffix: terraform
+  register: tempdir
+
+- name: download terraform
+  get_url:
+    url: "{{ terraform_download_url }}"
+    dest: "{{ tempdir.path }}"
+
+- name: unzip terraform
+  unarchive:
+    src: "{{ tempdir.path }}/{{ terraform_zip }}"
+    dest: /usr/local/bin
+    mode: ugo+x
+
+- name: remove temp dir
+  file:
+    path: "{{ tempdir.path }}"
+    state: absent

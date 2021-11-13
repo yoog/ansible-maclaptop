@@ -19,3 +19,5 @@ sshgitconfigs:
     fqdn: github.com
     IdentityFile: "~/.ssh/id_rsa_yoog"
     comment: '# github personal'
+
+terraform_version: "0.12.25"
