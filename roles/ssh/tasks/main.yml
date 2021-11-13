@@ -5,7 +5,7 @@
     path: ~/.ssh/config
     create: yes
     mode: 0600
-    marker: "# {mark} textiq hosts"
+    marker: "# {mark} other ssh hosts"
     block: |-
       {% for sshconfig in sshconfigs %}
       Host {{ sshconfig.name }}
