@@ -9,3 +9,4 @@
     - { role: nvim, tags: ['nvim'] }
     - { role: bash, tags: ['bash'] }
     - { role: terraform, tags: ['terraform'] }
+    - { role: brew, tags: ['brew'] }
