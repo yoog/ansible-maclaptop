@@ -22,6 +22,15 @@ alias vim="nvim"
 alias dev="cd ~/dev"
 alias devpersonal="cd ~/devpersonal"
 
+# git aliases
+gitbranchcleanup() {
+    git branch --merged | egrep -v "(^\*|master|main|dev|develop)" | xargs git branch -d
+}
+
+gcgp() {
+    git checkout $1 && git pull
+}
+
 # taken from https://gist.github.com/natelandau/10654137
 alias path='echo -e ${PATH//:/\\n}'
 
