@@ -26,6 +26,10 @@ Ansible roles for setting my mac laptop
 ### docker
  * install docker desktop (via cask)
 
+### brew
+ * install brew
+ * NOTE: this requires running the playbook with -K
+
 ## How to run
 
 Run all roles

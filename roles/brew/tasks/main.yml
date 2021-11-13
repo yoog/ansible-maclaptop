@@ -1,0 +1,21 @@
+---
+
+- name: create tempdir
+  tempfile:
+    state: directory
+    suffix: brew
+  register: brewtemp
+
+- name: download brew script
+  get_url:
+    url: "https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
+    dest: "{{ brewtemp.path }}"
+    mode: ugo+x 
+
+- name: run brew script
+  script: "{{ brewtemp.path}}/install.sh"
+
+- name: remove temp dir
+  file:
+    path: "{{ brewtemp.path }}"
+    state: absent
