@@ -38,6 +38,9 @@ pip3 install ansible==2.9.27
  * install brew
  * NOTE: this requires running the playbook with -K
 
+### terraform
+ * install terraform (12.25)
+
 ## How to run
 
 Run all roles
