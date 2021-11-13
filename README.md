@@ -23,6 +23,9 @@ Ansible roles for setting my mac laptop
  * install neovim
  * creates custom init.vim config in ~/.config/nvim/
 
+### docker
+ * install docker desktop (via cask)
+
 ## How to run
 
 Run all roles
