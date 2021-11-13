@@ -2,6 +2,14 @@
 
 Ansible roles for setting my mac laptop
 
+## install ansible
+
+NOTE: ansible 2.9 is used in prod hence hardcoding of the specific version!
+
+```bash
+pip3 install ansible==2.9.27
+```
+
 ## Roles
 
 ### git
@@ -29,6 +37,9 @@ Ansible roles for setting my mac laptop
 ### brew
  * install brew
  * NOTE: this requires running the playbook with -K
+
+### terraform
+ * install terraform (12.25)
 
 ## How to run
 
