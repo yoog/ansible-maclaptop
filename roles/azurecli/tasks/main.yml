@@ -1,0 +1,7 @@
+---
+
+- name: install latest azure cli
+  homebrew:
+    name: azure-cli
+    state: latest
+    update_homebrew: yes
