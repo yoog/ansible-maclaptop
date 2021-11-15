@@ -33,6 +33,7 @@ pip3 install ansible==2.9.27
 
 ### docker
  * install docker desktop (via cask)
+ * install font required for operator use - can use tag docker_font to only install the font and skip installing docker
 
 ### brew
  * install brew
