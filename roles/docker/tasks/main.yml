@@ -4,3 +4,13 @@
   homebrew_cask:
     name: docker
     state: present
+
+- name: install docker font
+  get_url:
+    url: "{{ item }}"
+    dest: /Library/Fonts
+  with_items:
+    - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
+  tags:
+    - docker_font
+    - always
