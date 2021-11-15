@@ -11,3 +11,4 @@
     - { role: terraform, tags: ['terraform'] }
     - { role: brew, tags: ['brew'] }
     - { role: docker, tags: ['docker'] }
+    - { role: azurecli, tags: ['azurecli'] }
