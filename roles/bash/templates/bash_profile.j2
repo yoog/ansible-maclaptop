@@ -22,13 +22,17 @@ alias vim="nvim"
 alias dev="cd ~/dev"
 alias devpersonal="cd ~/devpersonal"
 
-# git aliases
+# git functions
 gitbranchcleanup() {
     git branch --merged | egrep -v "(^\*|master|main|dev|develop)" | xargs git branch -d
 }
 
 gcgp() {
     git checkout $1 && git pull
+}
+
+gpsup() {
+    git push --set-upstream origin $(git branch --show-current)
 }
 
 # taken from https://gist.github.com/natelandau/10654137
