@@ -1,9 +1,10 @@
 ---
 
+# NOTE: brew install is done because ansible is trying to run brew cask when it should be brew install --cask 
 - name: install docker
-  homebrew_cask:
-    name: docker
-    state: present
+  command:
+    cmd: brew install --cask docker
+  when: not "'Docker.app' in installed_applications.stdout"
 
 - name: install docker font
   get_url:
@@ -11,6 +12,18 @@
     dest: /Library/Fonts
   with_items:
     - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
-  tags:
-    - docker_font
-    - always
+  when: not "'Docker.app' in installed_applications.stdout"
+
+- name: Get application list 
+  command:
+    cmd: "ls -la /Applications/"
+  register: applications
+
+# let the user know why Docker wasn't installed
+- name: assert docker is installed
+  assert:
+    that:
+      - "'Docker.app' in applications.stdout"
+    fail_msg: "Docker installed failed"
+    success_msg: "Docker is installed"
+
