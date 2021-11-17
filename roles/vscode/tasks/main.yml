@@ -18,6 +18,6 @@
   assert:
     that:
       - "'Visual Studio Code.app' in applications.stdout"
-    fail_msg: "Visual Studio Code Install failed check msg/logs"
-    success_msg: "Visual Studio Code is installed"
+    fail_msg: "Visual Studio Code install failed check msg/logs"
+    success_msg: "Visual Studio Code installed or is already installed"
 

@@ -8,6 +8,8 @@
       command:
         cmd: "ls -la /Applications/"
       register: installed_applications
+      tags:
+        - always
   roles:
     - { role: git, tags: ['git'] }
     - { role: ssh, tags: ['ssh'] }
