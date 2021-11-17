@@ -34,8 +34,9 @@ pip3 install ansible==2.9.27
  * install vim-dim plugin/color scheme
 
 ### docker
- * install docker desktop (via cask)
+ * install docker or upgrade if already installed  (via cask)
  * install font required for operator use
+ * when installing fresh or upgrading be sure to start the Docker Desktop app to get the cli installed
 
 ### brew
  * install brew

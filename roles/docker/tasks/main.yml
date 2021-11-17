@@ -6,6 +6,11 @@
     cmd: brew install --cask docker
   when: not "'Docker.app' in installed_applications.stdout"
 
+- name: upgrade docker
+  command:
+    cmd: brew upgrade --cask docker
+  when: "'Docker.app' in installed_applications.stdout"
+
 - name: install docker font
   get_url:
     url: "{{ item }}"
@@ -24,6 +29,9 @@
   assert:
     that:
       - "'Docker.app' in applications.stdout"
-    fail_msg: "Docker installed failed"
-    success_msg: "Docker is installed"
+    fail_msg: "Docker install failed check msg/logs"
+    success_msg: "Docker installed or is already installed"
 
+- name: reminder to start docker desktop
+  debug:
+    msg: "Be sure to run docker desktop app to get the cli installed and finish installation"
