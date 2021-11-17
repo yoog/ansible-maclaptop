@@ -1,0 +1,23 @@
+---
+
+# command is used here because with ansible 2.9 it's trying to do:
+# brewcask install visual-studio-code but cask isn't an option it should be --cask
+# NOTE: this will error out if it's already installed!
+- name: install vscode
+  command:
+    cmd: brew install --cask visual-studio-code
+  when: not "'Visual Studio Code.app' in installed_applications.stdout"
+
+- name: Get application list
+  command:
+    cmd: "ls -la /Applications/"
+  register: applications
+
+# let the user know why vscode wasn't installed
+- name: assert vscode installed
+  assert:
+    that:
+      - "'Visual Studio Code.app' in applications.stdout"
+    fail_msg: "Visual Studio Code Install failed check msg/logs"
+    success_msg: "Visual Studio Code is installed"
+
