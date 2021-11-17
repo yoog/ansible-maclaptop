@@ -18,3 +18,4 @@
     - { role: docker, tags: ['docker'] }
     - { role: azurecli, tags: ['azurecli'] }
     - { role: vscode, tags: ['vscode'] }
+    - { role: helm, tags: ['helm'] }
