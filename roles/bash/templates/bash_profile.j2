@@ -23,16 +23,29 @@ alias dev="cd ~/dev"
 alias devpersonal="cd ~/devpersonal"
 
 # git functions
+
+# delete merged branches
 gitbranchcleanup() {
+    echo "git branch --merged | egrep -v \"(^\*|master|main|dev|develop)\" | xargs git branch -d"
     git branch --merged | egrep -v "(^\*|master|main|dev|develop)" | xargs git branch -d
 }
 
+# checkout repo and pull
 gcgp() {
+    echo "git checkout $1 && git pull"
     git checkout $1 && git pull
 }
 
+# push and set upstream branch name
 gpsup() {
+    echo "git push --set-upstream origin $(git branch --show-current)"
     git push --set-upstream origin $(git branch --show-current)
+}
+
+# git status
+gs() {
+    echo "git status"
+    git status
 }
 
 # taken from https://gist.github.com/natelandau/10654137
