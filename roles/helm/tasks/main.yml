@@ -1,0 +1,7 @@
+---
+
+- name: install helm via homebrew
+  homebrew:
+    name: helm
+    state: latest
+    update_homebrew: yes
