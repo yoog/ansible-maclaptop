@@ -1,0 +1,3 @@
+go_tools:
+  - go
+  - goreleaser/tap/goreleaser
