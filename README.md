@@ -56,6 +56,11 @@ pip3 install ansible==2.9.27
  * install latest azure cli
  * updating can be done from the cli self "az upgrade" (note that this is in preview)f
 
+### go
+ * install go
+ * install goreleaser - <https://goreleaser.com/>
+
+
 ## How to run
 
 Run all roles
