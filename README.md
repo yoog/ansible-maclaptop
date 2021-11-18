@@ -54,7 +54,7 @@ pip3 install ansible==2.9.27
 
 ### azurecli
  * install latest azure cli
- * updating can be done from the cli self "az upgrade" (note that this is in preview)f
+ * updating can be done from the cli self "az upgrade" (note that this is in preview)
 
 ### go
  * install go
