@@ -1,0 +1,7 @@
+---
+
+- name: install go and go tools
+  homebrew:
+    name: "{{ go_tools }}"
+    state: present
+    update_homebrew: yes

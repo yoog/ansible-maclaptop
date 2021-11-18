@@ -21,3 +21,4 @@
     - { role: azurecli, tags: ['azurecli'] }
     - { role: vscode, tags: ['vscode'] }
     - { role: helm, tags: ['helm'] }
+    - { role: go, tags: ['go'] }
