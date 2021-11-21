@@ -41,6 +41,8 @@ pip3 install ansible==2.9.27
 ### brew
  * install brew
  * NOTE: this requires running the playbook with -K
+ * this role is always run as a pre_task if it is found that brew is not installed
+ * run this role to also update brew, the pre_task will NOT update it
 
 ### terraform
  * install terraform 0.12.25 - this the version used on github runners
@@ -66,17 +68,12 @@ pip3 install ansible==2.9.27
 
 ## How to run
 
-Run all roles
+Run all roles, note: -K is specified for admin/sudo pass
 ```bash
-ansible-playbook setup.yml
+ansible-playbook setup.yml -K
 ```
 
 Run specific roles with tags
 ```bash
-ansible-playbook setup.yml -t <tag-names>
-```
-
-Run role with sudo pass
-```bash
-ansible-playbook setup.yml -t bash -K
+ansible-playbook setup.yml -t <tag-names> -K
 ```
