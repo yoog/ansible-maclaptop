@@ -1,0 +1,7 @@
+---
+
+- name: brew install awscli
+  homebrew:
+    name: awscli
+    state: latest
+    update_homebrew: yes

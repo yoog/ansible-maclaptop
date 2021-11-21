@@ -22,3 +22,4 @@
     - { role: vscode, tags: ['vscode'] }
     - { role: helm, tags: ['helm'] }
     - { role: go, tags: ['go'] }
+    - { role: awscli, tags: ['aws'] }
