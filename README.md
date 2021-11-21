@@ -15,8 +15,9 @@ pip3 install ansible==2.9.27
 ### git
 
  * install or update to latest git
- * Add ~.ssh/config for tiq and personal keys
- * Create separate .gitconfigs for different directories
+ * The following will only run if the gitsshconfig tag is also included
+   * Add ~.ssh/config for tiq and personal keys
+   * Create separate .gitconfigs for different directories
 
 ### ssh
 
