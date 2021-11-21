@@ -10,13 +10,26 @@
       register: installed_applications
       tags:
         - always
+    - name: check if brew is installed
+      command:
+        cmd: command -v brew
+      register: brewinstalled
+      ignore_errors: yes
+      tags:
+        - always
+    - name: install brew # only install brew if it's not installed
+      include_role:
+        name: brew
+      tags:
+        - always
+      when: brewinstalled.rc != 0
   roles:
+    - { role: brew, tags: ['brew'] }
     - { role: git, tags: ['git'] }
     - { role: ssh, tags: ['ssh'] }
     - { role: nvim, tags: ['nvim'] }
     - { role: bash, tags: ['bash'] }
     - { role: terraform, tags: ['terraform'] }
-    - { role: brew, tags: ['brew'] }
     - { role: docker, tags: ['docker'] }
     - { role: azurecli, tags: ['azurecli'] }
     - { role: vscode, tags: ['vscode'] }

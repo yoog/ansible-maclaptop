@@ -6,34 +6,9 @@
     state: latest
     update_homebrew: yes
 
-- name: add custom git configs
-  template:
-    src: gitconfig.j2
-    dest: "{{ gitconfig.path }}/.gitconfig"
-  loop: "{{ gitconfigs }}"
-  loop_control:
-    loop_var: gitconfig
+- name: run git configs
+  include_tasks:
+    gitsshconfig.yml
+  tags:
+    - sshgitconfig
 
-- name: make sure .ssh dir exists
-  file:
-    path: "{{ lookup('env', 'HOME') }}/.ssh"
-    mode: 0700
-    state: directory
-
-- name: update ssh config
-  blockinfile:
-    path: ~/.ssh/config
-    create: yes
-    mode: 0600
-    marker: "# {mark} ssh github"
-    block: |-
-      {% for sshgitconfig in sshgitconfigs %}
-      {{ sshgitconfig.comment }}
-      Host {{ sshgitconfig.name }}
-         HostName {{ sshgitconfig.fqdn }}
-         User git
-         AddKeysToAgent yes
-         UseKeychain yes
-         IdentityFile {{ sshgitconfig.IdentityFile }}
-
-      {% endfor %}
