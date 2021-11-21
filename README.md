@@ -60,6 +60,9 @@ pip3 install ansible==2.9.27
  * install go
  * install goreleaser - <https://goreleaser.com/>
 
+### awscli
+ * install latest aws cli
+
 
 ## How to run
 
