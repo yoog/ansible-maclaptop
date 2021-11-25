@@ -1,5 +1,5 @@
 sshconfigs:
-  - name: textiq.net
+  - name: "*.textiq.net"
     IdentityFile: "~/.ssh/id_rsa"
 
 gitconfigs:
