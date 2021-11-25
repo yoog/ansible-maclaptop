@@ -9,6 +9,7 @@
     block: |-
       {% for sshconfig in sshconfigs %}
       Host {{ sshconfig.name }}
+         UseKeychain yes
          ForwardAgent yes
          AddKeysToAgent yes
          IdentityFile {{ sshconfig.IdentityFile }}
