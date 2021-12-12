@@ -66,6 +66,9 @@ pip3 install ansible==2.9.27
 ### awscli
  * install latest aws cli
 
+### postman
+ * install or upgrade to latest postman
+
 
 ## How to run
 
