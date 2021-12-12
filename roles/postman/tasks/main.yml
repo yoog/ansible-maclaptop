@@ -1,0 +1,14 @@
+---
+
+- name: upgrade existing postman
+  command:
+    cmd: brew upgrade --cask postman
+  when: "installed_applications.stdout.find('v=' ~ 'Postman.app') == 1"
+
+- debug:
+    msg: "{{ installed_applications.stdout }}"
+
+- name: install postman via homebrew cask
+  command:
+    cmd: brew install --cask postman
+  when: "installed_applications.stdout.find('v=' ~ 'Postman.app') == -1"
