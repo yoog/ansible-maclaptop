@@ -37,3 +37,4 @@
     - { role: go, tags: ['go'] }
     - { role: awscli, tags: ['aws'] }
     - { role: postman, tags: ['postman'] }
+    - { role: cli_tools, tags: ['clitools'] }

@@ -1,0 +1,7 @@
+---
+
+- name: install tools
+  homebrew:
+    name: "{{ tools }}"
+    state: present
+    update_homebrew: yes
