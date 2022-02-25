@@ -1,8 +1,32 @@
 ---
 
+- name: update/install latest bash
+  homebrew:
+    name: bash
+    state: latest
+    update_homebrew: yes
+
+- name: set bash path
+  command:
+    cmd: "brew --prefix"
+  register: brew_prefix
+
+- name: set new bash path
+  set_fact:
+    new_bash_path: "{{ brew_prefix.stdout_lines[0] }}/bin/bash"
+
+- name: add new bash to shells
+  become: yes
+  blockinfile:
+    path: /private/etc/shells
+    marker: "# {mark} brew bash"
+    block: |-
+      {{ new_bash_path }}
+
 - name: set bash as default terminal
   command:
-    cmd: chsh -s /bin/bash
+    cmd: "chpass -s {{ new_bash_path }} {{ lookup('ENV', 'USER') }}"
+    #    cmd: "chsh -s {{ new_bash_path }}"
 
 - name: add bash_profile
   template:

@@ -22,6 +22,9 @@ alias dev="cd ~/dev"
 alias devpersonal="cd ~/devpersonal"
 alias path='echo -e ${PATH//:/\\n}' # taken from https://gist.github.com/natelandau/10654137
 
+# kubernetes alias
+alias kcgc="kubectl config get-contexts"
+
 # git functions
 
 # delete merged branches
@@ -54,4 +57,9 @@ gs() {
     git status
 }
 
+# kubernetes functions
+
+# change namespace
+ksns() {
+  kubectl config set-context --current --namespace=$1
 
