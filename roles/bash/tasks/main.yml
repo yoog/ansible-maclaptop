@@ -6,7 +6,7 @@
     state: latest
     update_homebrew: yes
 
-- name: set bash path
+- name: get brew prefix
   command:
     cmd: "brew --prefix"
   register: brew_prefix
