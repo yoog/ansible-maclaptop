@@ -26,7 +26,6 @@
 - name: set bash as default terminal
   command:
     cmd: "chpass -s {{ new_bash_path }} {{ lookup('ENV', 'USER') }}"
-    #    cmd: "chsh -s {{ new_bash_path }}"
 
 - name: add bash_profile
   template:
