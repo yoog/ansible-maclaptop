@@ -2,3 +2,5 @@
 tools:
   - watch
   - pulumi
+  - azure-cli
+  - awscli
