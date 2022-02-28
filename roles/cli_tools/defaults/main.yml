@@ -1,3 +1,4 @@
 # add any tools to this list
 tools:
   - watch
+  - pulumi

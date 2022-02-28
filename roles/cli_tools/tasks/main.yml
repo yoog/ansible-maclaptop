@@ -3,5 +3,5 @@
 - name: install tools
   homebrew:
     name: "{{ tools }}"
-    state: present
+    state: latest
     update_homebrew: yes
