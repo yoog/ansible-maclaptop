@@ -1,7 +1,7 @@
 ---
 
-- name: brew install awscli
+- name: install tools
   homebrew:
-    name: awscli
+    name: "{{ tools }}"
     state: latest
     update_homebrew: yes

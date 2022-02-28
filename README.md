@@ -45,6 +45,14 @@ pip3 install ansible==2.9.27
  * this role is always run as a pre_task if it is found that brew is not installed
  * run this role to also update brew, the pre_task will NOT update it
 
+### clitools
+ * this role install cli-tools that don't require any extra configuration
+ * cli tools installed
+   * watch
+   * pulumi
+   * aws cli
+   * azure cli
+
 ### terraform
  * install terraform 0.12.25 - this the version used on github runners
 
@@ -55,16 +63,9 @@ pip3 install ansible==2.9.27
  * install the latest vscode via brew cask
  * note this won't update if already installed, update vscode from the app itself
 
-### azurecli
- * install latest azure cli
- * updating can be done from the cli self "az upgrade" (note that this is in preview)
-
 ### go
  * install go
  * install goreleaser - <https://goreleaser.com/>
-
-### awscli
- * install latest aws cli
 
 ### postman
  * install or upgrade to latest postman

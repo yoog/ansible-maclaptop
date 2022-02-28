@@ -1,0 +1,6 @@
+# add any tools to this list
+tools:
+  - watch
+  - pulumi
+  - azure-cli
+  - awscli

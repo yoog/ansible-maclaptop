@@ -31,9 +31,8 @@
     - { role: bash, tags: ['bash'] }
     - { role: terraform, tags: ['terraform'] }
     - { role: docker, tags: ['docker'] }
-    - { role: azurecli, tags: ['azurecli'] }
     - { role: vscode, tags: ['vscode'] }
     - { role: helm, tags: ['helm'] }
     - { role: go, tags: ['go'] }
-    - { role: awscli, tags: ['aws'] }
     - { role: postman, tags: ['postman'] }
+    - { role: cli_tools, tags: ['clitools'] }
