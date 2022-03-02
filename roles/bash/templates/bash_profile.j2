@@ -5,11 +5,8 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # path stuff
 export PATH="/usr/local/git/bin:/sw/bin/:/usr/local/bin:/usr/local/:/usr/local/sbin:/usr/local/mysql/bin:$PATH"
 
-# default prompt
-#export PS1="\h:\W \u\$"
-
 # prompt
-export PS1="\u@\h \e[1;36m\w\e[m> "
+export PS1="\u@\h \[\033[1;036m\]\w\[\033[0m\]> "
 
 # aliases
 alias ll="ls -lh"
