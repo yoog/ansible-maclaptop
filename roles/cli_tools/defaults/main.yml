@@ -4,3 +4,4 @@ tools:
   - pulumi
   - azure-cli
   - awscli
+  - k9s
